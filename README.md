@@ -47,4 +47,16 @@ created via:
 
 In GitHub create the repository  car-showcase
      
+
+     RapidAPI
+
+     App JSMastery-NextJ13-Cars
      
+     key  21a783b765msh502ff487a7bcceap1943f9jsnf17e5042d2f8
+
+     
+     url: 'https://cars-by-api-ninjas.p.rapidapi.com/v1/car
+
+
+     
+      
