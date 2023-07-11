@@ -18,7 +18,8 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 export async function fetchCars() {
 
 
-  const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla';
+  //const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla';
+  const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=Volkswagen';
 
   const options = {
     method: 'GET',
@@ -48,9 +49,13 @@ export async function fetchCars() {
 
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   const url = new URL("https://cdn.imagin.studio/getimage");
+
+  //   const url = new URL("https://cdn.imagin.studio/car-image-app");
+
   const { make, model, year } = car;
 
-  url.searchParams.append('customer', process.env.NEXT_PUBLIC_IMAGIN_API_KEY || '');
+  //url.searchParams.append('customer', process.env.NEXT_PUBLIC_IMAGIN_API_KEY || '');
+  url.searchParams.append('customer', 'hrjavascript-mastery');
   url.searchParams.append('make', make);
   url.searchParams.append('modelFamily', model.split(" ")[0]);
   url.searchParams.append('zoomType', 'fullscreen');

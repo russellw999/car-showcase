@@ -57,6 +57,11 @@ In GitHub create the repository  car-showcase
      
      url: 'https://cars-by-api-ninjas.p.rapidapi.com/v1/car
 
+min 2.05   ==>  need acess to  imagin.studio/car-image-api
+    which only accepts company emails for trials
 
-     
+
+     need to configure    cdn.imagin.studio     in   next.config.js
+
+     ==> video bookmark   2:
       

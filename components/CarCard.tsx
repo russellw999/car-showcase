@@ -18,6 +18,7 @@ const CarCard = ({ car }: CarCardProps) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  console.log(`model ${model}`);
 
   return (
     <div className="car-card group">
@@ -36,7 +37,7 @@ const CarCard = ({ car }: CarCardProps) => {
       </div> */}
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src="/hero.png"
+          src={generateCarImageUrl(car)}
           alt="car model"
           fill
           priority
