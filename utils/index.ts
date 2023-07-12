@@ -15,12 +15,13 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
   return rentalRatePerDay.toFixed(0);
 };
 
-export async function fetchCars() {
-
+export async function fetchCars(filters: FilterProps) {
+  const { manufacturer, year, model, limit, fuel } = filters;
 
   //const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla';
-  const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=Volkswagen';
+  const url =  `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
 
+  console.log(url);
   const options = {
     method: 'GET',
     headers: {
@@ -65,3 +66,14 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
   return `${url}`;
 } 
+
+export const updateSearchParams = (type: string, value: string) => {
+
+  // Create a new URLSearchParams object using the current URL search parameters
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.set(type, value);
+ // Generate the new pathname with the updated search parameters
+  const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
+
+  return newPathName;
+}
