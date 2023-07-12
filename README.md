@@ -63,5 +63,5 @@ min 2.05   ==>  need acess to  imagin.studio/car-image-api
 
      need to configure    cdn.imagin.studio     in   next.config.js
 
-     ==> video bookmark   2:33
+     ==> video bookmark   3:00  
       
