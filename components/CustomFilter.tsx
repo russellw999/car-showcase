@@ -8,32 +8,25 @@ import { CustomFilterProps } from "@/types";
 import { updateSearchParams } from "@/utils";
 
 
-const CustomFilter = ({ title, options }: CustomFilterProps) => {
-  const router = useRouter();
-  const [selected, setSelected] = useState(options[0]); // State for storing the selected option
-
-// update the URL search parameters and navigate to the new URL
-const handleUpdateParams = (e: { title: string; value: string }) => {
-   
-  const newPathName = updateSearchParams(title, e.value.toLowerCase());
-
-  router.push(newPathName);
-};
-
-
+export default function CustomFilter<T>({
+  options,
+  setFilter,
+}: CustomFilterProps<T>) {
+  const [menu, setMenu] = useState(options[0]); // State for storing the selected option
+ 
   return (
     <div className="w-fit">
        <Listbox
-          value={selected}
-          onChange={ (e) => {
-            setSelected(e); // Update the selected option in state
-            handleUpdateParams(e); // Update the URL search parameters and navigate to the new URL
-          }} 
+        value={menu}
+        onChange={(e) => {
+          setMenu(e);
+          setFilter(e.value as unknown as T); // Update the selected option in state
+        }}
        >
           <div className="relative w-fit z-10">
               {/* Button for the listbox */}
               <Listbox.Button className='custom-filter__btn'>
-                 <span className="bloc truncate">{selected.title}</span>
+                 <span className='block truncate'>{menu.title}</span>
                  <Image 
                     src='/chevron-up-down.svg'
                     width={20}
@@ -78,5 +71,3 @@ const handleUpdateParams = (e: { title: string; value: string }) => {
     </div>
   );
 }
-
-export default CustomFilter;

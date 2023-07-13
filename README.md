@@ -65,5 +65,9 @@ min 2.05   ==>  need acess to  imagin.studio/car-image-api
 
      ==> video   3:02   Completed   Server Side Project
 
-      ==> video bookmark
+     =====>>    3.02  Convert to Client side most changes in the Page.tsx
+
+              home () will no longer be async
+              
+      ==> video bookmark  
       
